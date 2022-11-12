@@ -33,7 +33,7 @@ maindrec: main.o recursived
 
 .PHONY: clean all
 	
-all: mains maindrec maindloop
+all: mains maindrec maindloop loops
 	
 clean:
 	rm *.o *.a *.so "maindloop" "maindrec" "mains"
