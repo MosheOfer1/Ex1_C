@@ -14,13 +14,13 @@ all: loops mains maindrec maindloop
 main.o:
 	$(CC) $(FLAGS) main.c -o $(OBJECTS_MAIN)
 
-basicClassification.o:
+$(OBJECTS_BASIC):
 	$(CC) $(FLAGS) basicClassification.c -o $(OBJECTS_BASIC)
 
-advancedClassificationLoop.o:
+$(OBJECTS_ADVANCED_LOOP):
 	$(CC) $(FLAGS) advancedClassificationLoop.c -o $(OBJECTS_ADVANCED_LOOP)
 
-advancedClassificationRecursion.o:
+$(OBJECTS_ADVANCED_REC):
 	$(CC) $(FLAGS) advancedClassificationRecursion.c -o $(OBJECTS_ADVANCED_REC)
 
 $(LIB_S_LOOP):
