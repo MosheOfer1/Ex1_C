@@ -48,10 +48,12 @@ mains: $(OBJECTS_MAIN) $(OBJECTS_BASIC) $(OBJECTS_ADVANCED_REC) $(LIB_S_REC)
 
 maindloop: $(OBJECTS_MAIN) $(OBJECTS_BASIC) $(OBJECTS_ADVANCED_LOOP) $(LIB_D_LOOP)
 	$(CC) -o maindloop $(OBJECTS_MAIN) -L. $(LIB_D_LOOP) -lm
+	sudo cp $(LIB_D_LOOP) /usr/lib
 
 maindrec: $(OBJECTS_MAIN) $(OBJECTS_BASIC) $(OBJECTS_ADVANCED_REC) $(LIB_D_REC)
 	$(CC) -o maindrec $(OBJECTS_MAIN) -L. $(LIB_D_REC) -lm
-
+	sudo cp $(LIB_D_REC) /usr/lib	
+	
 .PHONY: clean all
 	
 clean:
