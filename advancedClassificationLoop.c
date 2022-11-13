@@ -10,14 +10,14 @@ int isPalindrome(int n) {
 	while (x>0)
 	{
 		dig_counter++;
-		x /= 10;
+		x /= DECIMAL_BASE;
 	}
 	//checking
-	int mid = (int) pow(10, dig_counter / 2);
-	int j = (int) pow(10, dig_counter - 1);
-	for (int i = 1; i <= mid; i *= 10,j /= 10)
+	int mid = (int) pow(DECIMAL_BASE, dig_counter / 2);
+	int j = (int) pow(DECIMAL_BASE, dig_counter - 1);
+	for (int i = 1; i <= mid; i *= DECIMAL_BASE,j /= DECIMAL_BASE)
 	{
-		if ((n/i)%10 != (n/j)%10)
+		if ((n/i)%DECIMAL_BASE != (n/j)%DECIMAL_BASE)
 		{
 			return 0;
 		}
@@ -37,9 +37,9 @@ int isArmstrong(int n) {
 	int arm_sum = 0;
 	while (x > 0 && arm_sum <= n)
 	{
-		int temp_pow = (int)pow(x%10,dig_counter);
+		int temp_pow = (int)pow(x%DECIMAL_BASE,dig_counter);
 		arm_sum += temp_pow;
-		x /= 10;
+		x /= DECIMAL_BASE;
 	}
 	if (arm_sum == n)
 	{
