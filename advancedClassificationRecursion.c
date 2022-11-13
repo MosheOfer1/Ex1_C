@@ -9,26 +9,26 @@ int isPalindrome(int n) {
 int isPalindrome_rec(int n, int i, int j) {
 	if (j <= i)
 	{
-		return 1;
+		return TRUE;
 	}
 
-	if ( (n/(int)(pow(10,i))%10) != (n / (int)(pow(10, j)) % 10) )
+	if ( (n/(int)(pow(DECIMAL_BASE,i))%DECIMAL_BASE) != (n / (int)(pow(DECIMAL_BASE, j)) % DECIMAL_BASE) )
 	{
-		return 0;
+		return FALSE;
 	}
 	return isPalindrome_rec(n, i + 1, j - 1);
 }
 
 int isArmstrong(int n) {
 	if(isArmstrong_rec(n,count_digits(n)) == n)
-		return 1;
-	return 0;
+		return TRUE;
+	return FALSE;
 }
 
 int isArmstrong_rec(int n,int dig) {
 	if(n>0) 
-		return (isArmstrong_rec(n/10,dig) + pow(n%10,dig));
-	return 0;
+		return (isArmstrong_rec(n/DECIMAL_BASE,dig) + pow(n%DECIMAL_BASE,dig));
+	return FALSE;
 }
 
 int count_digits(int n){
@@ -37,7 +37,7 @@ int count_digits(int n){
 	while (x > 0)
 	{
 		count_dig++;
-		x /= 10;
+		x /= DECIMAL_BASE;
 	}
 	return count_dig;
 }
