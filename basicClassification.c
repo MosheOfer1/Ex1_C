@@ -19,13 +19,13 @@ int isStrong(int n) {
 	int temp_sum_f = 1;
 	while (x>0 && n >= sum_factorial)
 	{
-		for (int i = 1; i <= (x%10); i++)
+		for (int i = 1; i <= (x%DECIMAL_BASE ); i++)
 		{
 			temp_sum_f *= i;
 		}
 		sum_factorial += temp_sum_f;
 		temp_sum_f = 1;
-		x /= 10;
+		x /= DECIMAL_BASE;
 	}
 	if (n == sum_factorial) {
 		return 1;
