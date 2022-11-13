@@ -30,7 +30,7 @@ int isArmstrong(int n) {
 	while (x > 0)
 	{
 		dig_counter++;
-		x /= 10;
+		x /= DECIMAL_BASE;
 	}
 
 	x = n;
