@@ -19,10 +19,10 @@ int isPalindrome(int n) {
 	{
 		if ((n/i)%DECIMAL_BASE != (n/j)%DECIMAL_BASE)
 		{
-			return 0;
+			return False;
 		}
 	}
-	return 1;
+	return True;
 }
 int isArmstrong(int n) {
 	int x = n;
@@ -43,7 +43,7 @@ int isArmstrong(int n) {
 	}
 	if (arm_sum == n)
 	{
-		return 1;
+		return True;
 	}
-	return 0;
+	return False;
 }
