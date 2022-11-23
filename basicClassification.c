@@ -7,10 +7,10 @@ int isPrime(int n) {
 	for (int i = 2; i <= d ;i++) {
 		if (n%i == 0)
 		{
-			return 0;
+			return False;
 		}
 	}
-	return 1;
+	return True;
 }
 
 int isStrong(int n) {
@@ -28,9 +28,9 @@ int isStrong(int n) {
 		x /= DECIMAL_BASE;
 	}
 	if (n == sum_factorial) {
-		return 1;
+		return True;
 	}
-	return 0;
+	return False;
 }
 
 
